@@ -5,13 +5,18 @@
     flex-direction: column;
 }
 
+.btn-primary {
+    background-color: #004669 !important;
+    color: white;
+}
+
 /* Header.css */
 .sticky-header {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #0d6efd;
+    background-color: #004669;
     color: white;
     padding: 10px; /* Adjust as needed */
     z-index: 100; /* Ensure it's above other content */
@@ -22,4 +27,15 @@
     font-size: 18px;
     font-weight: bold;
   }
+
+  /* Footer.css */
+.footer {
+    display: none;
+    background-color: #004669;
+    color: white;
+    font-family: Tahoma, Arial;
+    font-size: 0.7em;
+    height: 2em;
+  }
+  
   
