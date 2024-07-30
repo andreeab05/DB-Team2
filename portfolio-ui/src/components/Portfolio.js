@@ -2,11 +2,11 @@ import React from 'react';
 import '../styles/styles.css';
 import '../styles/component.css'; // Import your custom styles
 
-const Admin = () => {
+const Portfolio = () => {
   return (
-    <div className='Admin'> This is admin page </div>
+    <div className='User'> This is User page </div>
     
   );
 };
 
-export default Admin;
+export default Portfolio;

@@ -2,9 +2,9 @@ import './styles/styles.css';
 import Login from './components/Login';
 import Header from './components/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Admin from './components/Admin';
-import User from './components/User';
+import User from './components/Portfolio';
 import Footer from './components/Footer';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Header/>    
       <BrowserRouter>
         <Routes>
-          <Route path="/admin" element={<Admin/>} />
+          <Route path="/admin" element={<Dashboard/>} />
           <Route path="/user" element={<User/>} />
           <Route path="/" exact element={<Login/>} /> {/* Default login route */}
         </Routes>
