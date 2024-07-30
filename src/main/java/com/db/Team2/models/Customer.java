@@ -1,10 +1,9 @@
 package com.db.Team2.models;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -18,6 +17,8 @@ public class Customer {
     @Column
     private String nationality;
 
+    @OneToMany(mappedBy = "customer")
+    private List<CustomerStock> customerStocks;
     public Integer getId() {
         return id;
     }
@@ -48,6 +49,14 @@ public class Customer {
 
     public void setNationality(String nationality) {
         this.nationality = nationality;
+    }
+
+    public List<CustomerStock> getCustomerStocks() {
+        return customerStocks;
+    }
+
+    public void setCustomerStocks(List<CustomerStock> customerStocks) {
+        this.customerStocks = customerStocks;
     }
 
     @Override

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "stock")
 @AllArgsConstructor
@@ -12,7 +14,7 @@ public class Stock {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private int stock_id;
+    private Integer stock_id;
 
     @Column
     private int stock_name;
@@ -25,6 +27,9 @@ public class Stock {
 
     @Column
     private int growth_rate;
+
+    @OneToMany(mappedBy = "stock")
+    private List<CustomerStock> customerStocks;
 
     public int getStock_id() {
         return stock_id;
@@ -66,5 +71,11 @@ public class Stock {
         this.growth_rate = growth_rate;
     }
 
+    public List<CustomerStock> getCustomerStocks() {
+        return customerStocks;
+    }
 
+    public void setCustomerStocks(List<CustomerStock> customerStocks) {
+        this.customerStocks = customerStocks;
+    }
 }

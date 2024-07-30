@@ -1,9 +1,6 @@
 package com.db.Team2.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
@@ -15,6 +12,46 @@ public class CustomerStock implements Serializable {
     int customer_id;
     @Id
     int stock_id;
+
+    @ManyToOne
+    @JoinColumn(name="customer_id")
+    private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name="stock_id")
+    private Stock stock;
+
+    public int getCustomer_id() {
+        return customer_id;
+    }
+
+    public void setCustomer_id(int customer_id) {
+        this.customer_id = customer_id;
+    }
+
+    public int getStock_id() {
+        return stock_id;
+    }
+
+    public void setStock_id(int stock_id) {
+        this.stock_id = stock_id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
+    }
 
     @Override
     public int hashCode() {
