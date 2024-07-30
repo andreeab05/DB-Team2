@@ -1,4 +1,5 @@
 import React from 'react';
+import StockImage from '../assets/StockImage.jpg';
 
 function Dashboard() {
 
@@ -29,7 +30,7 @@ return (
                             {stocks.map((stock) => (
                                 <div key={stock.name} className="stock-item">
                                     <div className="stock-box p-3">
-                                        <img src="../assets/StockImage.jpg" alt={stock.name} />
+                                        <img src={StockImage} alt={stock.name} />
                                         <p>
                                             {`Amount: ${stock.amount}`} <br /> {`Cost: $${stock.cost}`} <br /> {`Growth: ${stock.growth * 100}%`}
                                         </p>
@@ -64,7 +65,7 @@ return (
                             {performanceMetrics.map((metric) => (
                                 <div key={metric.stock} className="metric-item">
                                     <div className="metric-box p-3">
-                                        <img src="../assets/StockImage.jpg" alt={metric.stock} />
+                                        <img src={StockImage} alt={metric.stock} />
                                         <p>{metric.metric}</p>
                                     </div>
                                 </div>
