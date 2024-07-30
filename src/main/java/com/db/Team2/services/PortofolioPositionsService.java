@@ -1,6 +1,5 @@
 package com.db.Team2.services;
 
-import com.db.Team2.models.Customer;
 import com.db.Team2.models.CustomerStock;
 import com.db.Team2.models.Stock;
 import com.db.Team2.repositories.PortofolioRepository;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Service
 public class PortofolioPositionsService {
     @Autowired
     PortofolioRepository portofolioRepository;
